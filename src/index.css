@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(251, 191, 36, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(251, 191, 36, 0.3); }
+}
+
+.app-icon {
+  @apply flex items-center justify-center w-12 h-12 rounded-xl bg-amber-800/30 
+         backdrop-blur-sm shadow-lg transition-all duration-300;
+}
+
+.app-icon:hover {
+  @apply bg-amber-700/50 scale-110;
+  animation: glow 2s infinite;
+}
+
+.window-appear {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.taskbar-item {
+  animation: slideUp 0.3s ease-out;
+}
+
+.window-content {
+  @apply bg-gradient-to-br from-amber-950/95 to-amber-900/95 backdrop-blur-sm;
+}
